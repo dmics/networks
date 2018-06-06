@@ -1,4 +1,23 @@
+## Data
+These datasets were derived from a Wikipedia scrape on all Academy Award-nominated films. This data consists of two separate csvs.
+
+### aa-nodes.csv
+This is a list of all entities (movies & actors) that appear in the original data, as well as some metadata about some of them.
+| id    | label     | type     | year    | won     | run_time     | budget     | box_office     |
+| :------------- | :------------- | :------------- | :------------- | :------------- | :------------- | :------------- | :------------- |
+| the-racket-1927       | The Racket      | movie       | 1927      | no       | 84       | NA       | NA      |
+| Meryl Streep      | Meryl Streep       |      |       |        |       |        |        |
+
+There are a couple of very important things about this structure that make it work smoothly (and in some cases, at all) in Gephi.
+
+- **id** is a column header that Gephi looks for in both the node and edge list. It should be a unique identifer for each person and movie that will appear on the graph. If this id isn't written then same as the `source` or `target` in the edges list, this won't work.
+- **label** is another term that Gephi looks for. This will be the label that you can toggle on and off on your graph.
+
+### aa-edges.csv
+
 ## Import Data
+Download the [network data]() and unzip it wherever you'd like.
+
 Open Gephi and click on 'New Project'
 
 Click on the 'Data Laboratory' tab at the top of the interface.
@@ -40,21 +59,18 @@ Click ‘Run’ next to a metric to generate a data report window. The measureme
 - Eigenvector Centrality - A measure of node importance in a network based on a node’s connections; the sum of the centrality measures of all nodes connected to a node
 - Avg. Path Length - The average number of steps to get from one randomly selected node to another
 
-
----left off---
-
 ## Utilize Measurement
-Once you’ve generated metrics, you can apply them to the graph visualization. Return to the left sidebar and click on the ‘Ranking’ tab, and then click the ‘Nodes’ tab just below it. Notice the icons to the right of the ‘Nodes’ and ‘Edges’ tab -- they allow you to resize and recolor both the nodes and the node labels. We’ll want to select the red diamond - the node size option.
+Once you’ve generated metrics, you can apply them to the graph visualization. Return to the left sidebar and click on the ‘Ranking’ tab, and then click the ‘Nodes’ tab just below it. Notice the icons to the right of the ‘Nodes’ and ‘Edges’ tab -- they allow you to resize and recolor both the nodes and the node labels. We’ll want to select the series of circles - the node size option.
 
-Select ‘Eigenvector Centrality’ from the drop down menu and click ‘Apply.' You may need to adjust the maximum size to better show the distribution and differences in the metric. If you stopped the ‘Layout’ algorithm, you may want to run it again with the ‘Prevent Overlap’ option selected, as resizing may have created more overlaps. We ran the Eigenvector Centrality metric that treated the network as undirected, so well-connected communities of practice, including locations and panels that function within the communities, should be highlighted.
-
-As a comparison, go back to the dropdown menu, select ‘Out-Degree,’ and click ‘Apply.’ In this directed dataset, ‘Individuals’ connect out to ‘Locations’ and ‘Sessions,’ so ‘Out-Degree’ will highlight the individuals who are associated with the most locations and sessions. Again, you may want to adjust the max size and re-run the layout.
+Select 'Ranking' and then ‘Eigenvector Centrality’ from the drop down menu and click ‘Apply.' You may need to adjust the maximum size to better show the distribution and differences in the metric. If you stopped the ‘Layout’ algorithm, you may want to run it again with the ‘Prevent Overlap’ option selected, as resizing may have created more overlaps.
 
 Try resizing nodes based on different metrics to get a feel for the kinds of visualizations you can create based on these statistics.
 
 ## Share Visualization
-Before sharing your visualization, you may want to change the appearance of your graph. The ‘Preview’ window includes a number of options to improve the aesthetics of the graph. Click the ‘Refresh’ button to bring your graph into the window, and use the controls along the left side to make changes. The presets are good places to start, but you may need to tweak things from there. Changes will not be made automatically -- you must use the ‘Refresh’ button.
+Before sharing your visualization, you may want to change the appearance of your graph. The ‘Preview’ window includes a number of options to improve the aesthetics of the graph. Click the ‘Refresh’ button to bring your graph into the window, and use the controls along the left side to make changes. The presets are good places to start, but you may need to tweak things from there. Changes will not be made automatically -- you must use the ‘Refresh’ button. This is a very large canvas, so you may lose your graph. The 'Reset zoom' button at the bottom of your screen is your friend here.
 
 To manually reposition nodes, you will need to return to the ‘Overview’ window, make sure that the Layout algorithm is turned off, select the ‘Dragging’ tool (the hand icon along the left side of the graph window), and click and drag a node to reposition it.
+
+Take a moment to change some of the aesthetics of your graph.
 
 You can export an image (SVG, PDF, or PNG) of the entire graph using the button in the bottom left corner, and use an editor such as Inkscape or Illustrator to add a title, add a legend, or crop the image. You can also save the all workspaces as a .gephi file, and you will be able to return to the workspaces as you left them. You can also export a single graph file by selecting File->Export->Graph File and saving the file as.gefx, although some aesthetic changes will be lost. More information about file support is available on the [Gephi website](https://gephi.org/users/supported-graph-formats/).
