@@ -7,7 +7,7 @@ This is a list of all entities (movies & actors) that appear in the original dat
 | id    | label     | type     | year    | won     | run_time     | budget     | box_office     |
 | :------------- | :------------- | :------------- | :------------- | :------------- | :------------- | :------------- | :------------- |
 | the-racket-1927       | The Racket      | movie       | 1927      | no       | 84       | NA       | NA      |
-| Meryl Streep      | Meryl Streep       |      |       |        |       |        |        |
+| Meryl Streep      | Meryl Streep       |   actor   |       |        |       |        |        |
 
 There are a couple of very important things about this structure that make it work smoothly (and in some cases, at all) in Gephi.
 
