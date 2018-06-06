@@ -1,8 +1,9 @@
 ## Data
-These datasets were derived from a Wikipedia scrape on all Academy Award-nominated films. This data consists of two separate csvs.
+These datasets were derived from a Wikipedia scrape on all Academy Award-nominated films. This data consists of two separate CSVs.
 
 ### aa-nodes.csv
 This is a list of all entities (movies & actors) that appear in the original data, as well as some metadata about some of them.
+
 | id    | label     | type     | year    | won     | run_time     | budget     | box_office     |
 | :------------- | :------------- | :------------- | :------------- | :------------- | :------------- | :------------- | :------------- |
 | the-racket-1927       | The Racket      | movie       | 1927      | no       | 84       | NA       | NA      |
@@ -12,11 +13,19 @@ There are a couple of very important things about this structure that make it wo
 
 - **id** is a column header that Gephi looks for in both the node and edge list. It should be a unique identifer for each person and movie that will appear on the graph. If this id isn't written then same as the `source` or `target` in the edges list, this won't work.
 - **label** is another term that Gephi looks for. This will be the label that you can toggle on and off on your graph.
+- **type** isn't a term that Gephi looks for, but it's been added here so that we can easily distinguish between people and movies in the graph.
 
 ### aa-edges.csv
 
+| source    | target    |
+| :------------- | :------------- |
+| the-shape-of-water-2017       | Octavia Spencer       |
+| a-streetcar-named-desire-1951       | Marlon Brando      |
+
+**source** and **target** are both terms that Gephi looks for in an edge list.
+
 ## Import Data
-Download the [network data]() and unzip it wherever you'd like.
+Download the [network data](https://github.com/dmics/networks/blob/master/networkdata.zip) and unzip it wherever you'd like.
 
 Open Gephi and click on 'New Project'
 
